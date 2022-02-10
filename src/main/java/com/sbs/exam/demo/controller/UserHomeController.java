@@ -30,17 +30,18 @@ public class UserHomeController {
 		return "또 만나요.";
 	}
 	
-	@RequestMapping("/usr/home/main4")
+	@RequestMapping("/usr/home/getCount")
 	@ResponseBody
-	public int showMain4() {
+	public int getCount() {
 		count++;
 		return count;
 	}
 	
-	@RequestMapping("/usr/home/main5")
+	@RequestMapping("/usr/home/doSetCount")
 	@ResponseBody
-	public String showMain5() {
-		count = 0;
-		return "count의 값이 0으로 초기화 되었습니다.";
+	public String doSetCount(int count) {
+		this.count = 0;
+		return "count의 값이" + this.count +"으로 초기화 되었습니다.";
 	}
+	
 }
